@@ -1,0 +1,434 @@
+/* fonts */
+
+@font-face {
+    font-family: "Tajawal";
+    src: url("../fonts/Tajawal-Black.woff2") format("woff2"), url("../fonts/Tajawal-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Tajawal";
+    src: url("../fonts/Tajawal-Bold.woff2") format("woff2"), url("../fonts/Tajawal-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Tajawal";
+    src: url("../fonts/Tajawal-ExtraBold.woff2") format("woff2"), url("../fonts/Tajawal-ExtraBold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Tajawal";
+    src: url("../fonts/Tajawal-Medium.woff2") format("woff2"), url("../fonts/Tajawal-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Tajawal";
+    src: url("../fonts/Tajawal-Regular.woff2") format("woff2"), url("../fonts/Tajawal-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* Main  Rules */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+body {
+    direction: rtl;
+    font-family: "Tajawal", "sans-serif";
+    background-color: #fafafa;
+}
+
+:root {
+    --clr-primary: #407590;
+    --clr-secondry: #3c3c3c;
+    --tran-primary: 0.4s;
+    --jozor-font: "", "sans-serif";
+}
+
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    background-color: var(--clr-secondry);
+    width: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--clr-primary);
+    min-height: 180px;
+}
+
+
+/* ===== Main Classes ===== */
+
+
+/* Colors */
+
+.clr-primary {
+    color: var(--clr-primary) !important;
+}
+
+.clr-secondry {
+    color: var(--clr-secondry) !important;
+}
+
+.back-primary {
+    background-color: var(--clr-primary);
+}
+
+.back-secondry {
+    background-color: var(--clr-secondry);
+}
+
+.light-text {
+    color: #818181;
+}
+
+
+/* Fonts */
+
+.jozor-font {
+    font-family: var(--jozor-font);
+}
+
+.talabat-font {
+    font-family: var(--talabat-font);
+}
+
+
+/* Some Classes */
+
+.under-line-title {
+    position: relative;
+    text-align: center;
+    z-index: 333;
+}
+
+.under-line-title::before {
+    content: "";
+    height: 2.5px;
+    width: 100%;
+    background-color: var(--clr-secondry);
+    margin: 10px auto;
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.under-line-title::after {
+    content: url("../images/section_title_img.svg");
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fafafa;
+    width: 42px;
+    height: 22px;
+    z-index: -1;
+}
+
+@media (min-width: 767px) {
+    .under-line-title::before {
+        width: 400px;
+    }
+}
+
+.index--1 {
+    z-index: -1;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+
+/* centered with position  */
+
+.center-position {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* centered with flex */
+
+.center-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.transform-hover {
+    transition: var(--tran-primary);
+}
+
+.transform-hover:hover {
+    transform: translateY(-10px);
+}
+
+
+/* =============================== Header ============================= */
+
+.header {
+    background-color: #f2f2f2;
+}
+
+
+/* top nav */
+
+.top-nav-address i,
+.top-nav-social a {
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-primary);
+    color: #fff;
+    font-size: 14px;
+}
+
+.top-nav-address span {
+    border-right: 1.5px solid var(--clr-primary);
+    padding-right: 7px;
+}
+
+
+/* navbar  */
+
+.navbar {
+    background-color: #fff;
+}
+
+.nav-link {
+    color: var(--jozor-font);
+    font-size: 19px;
+}
+
+
+/* landing */
+
+.landing-text p:last-of-type {
+    position: relative;
+    max-width: 585px;
+}
+
+.landing-text p:last-of-type i {
+    position: absolute;
+    left: 7px;
+    animation: arrow-motion 0.7s linear infinite alternate;
+}
+
+@keyframes arrow-motion {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(10px);
+    }
+}
+
+.landing-text a {
+    min-width: 200px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+.landing-text a i {
+    background-color: #fff;
+    border-radius: 9px;
+    width: 39px;
+    height: 39px;
+}
+
+.landing-form label {
+    color: var(--clr-secondry);
+    margin-bottom: 3px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.landing-form input {
+    height: 40px;
+    border-radius: 5px;
+    background: #fcfcfc;
+    border: 1px solid #c6c6c6;
+    display: block;
+    width: 100%;
+    box-shadow: 7px 0 0 0 var(--clr-primary);
+}
+
+.landing-form button {
+    background-color: var(--clr-primary);
+    color: #fff;
+    min-width: 130px;
+    border-radius: 8px;
+    border: 0;
+    height: 45px;
+    position: relative;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 9px;
+    align-items: center;
+    margin-top: 15px;
+    margin-right: auto;
+    font-weight: bold;
+}
+
+.landing-form button::after {
+    content: url("../images/send_btn_icon.svg");
+    width: 28px;
+    height: 28px;
+}
+
+
+/* ================================== Our Feats  =============================== */
+
+.our-feats-box {
+    margin-bottom: 25px;
+}
+
+.our-feats-box:hover {
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.07);
+}
+
+.our-feats-box .image {
+    height: 39px;
+}
+
+
+/* ================================== Our services  =============================== */
+
+.our-services-text p {
+    max-width: 505px;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 15px;
+    margin-bottom: 57px;
+}
+
+.our-services-text a {
+    display: inline-flex;
+    width: 190px;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.our-services-text a i {
+    width: 39px;
+    height: 39px;
+    border-radius: 9px;
+    color: var(--clr-secondry);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.our-services-image img {
+    object-fit: cover;
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    aspect-ratio: 1.2/1;
+}
+
+
+/* ================================== Our branches  =============================== */
+
+.our-branches-box {
+    margin-bottom: 25px;
+}
+
+.our-branches-box svg {
+    max-width: 100%;
+}
+
+
+/* footer */
+
+.social-media-footer a {
+    width: 38px;
+    height: 38px;
+    border-radius: 7px;
+    background-color: #7098ac;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--tran-primary);
+}
+
+.social-media-footer a:hover {
+    background-color: var(--clr-secondry);
+}
+
+@media (min-width: 776px) {
+    .link-motion {
+        transition: var(--tran-primary);
+        display: inline-flex;
+        align-items: center;
+    }
+    .link-motion::before {
+        content: url("../images/svg_logo.svg");
+        border-radius: 50%;
+        display: inline-block;
+        margin-left: 8px;
+        opacity: 0;
+        transition: var(--tran-primary);
+    }
+    .link-motion:hover {
+        transform: translateX(-10px);
+    }
+    .link-motion:hover::before {
+        opacity: 1;
+    }
+}
