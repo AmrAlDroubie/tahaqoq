@@ -7,3 +7,8 @@ const our_branches_swiper = new Swiper(".our-branches-swiper", {
 });
 
 new WOW().init();
+
+window.onload = function() {
+    document.querySelector(".loading").classList.remove("active");
+    document.querySelector("body").style.overflow = "auto";
+};
